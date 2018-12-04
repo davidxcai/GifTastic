@@ -1,24 +1,26 @@
 $(document).ready()
 
-var gifButtons = ["Pikachu", "Eevee", "Tommy Wiseau"];
+var gifButtons = ["One Punch Man", "Mob Psycho 100", "Tommy Wiseau"];
 
 renderButtons();
 
 //Sets default parameters on page load
 var rating = "G";
 //Grabs the value from ratings dropdown menu and stores it in var
-$("#ratingSelect").click(function() {
+$("#ratingSelect").click(function () {
     rating = $(this).val();
 });
 var limit = 5;
 //Grabs the value from limit dropdown menu and stores it in var
-$("#limitSelect").click(function() {
+$("#limitSelect").click(function () {
     limit = $(this).val();
 });
 
 //Creates buttons when invoked
 function renderButtons() {
     $("#buttonBody").empty();
+
+    // renderPlusTenBtn();
 
     for (var i = 0; i < gifButtons.length; i++) {
 
@@ -32,13 +34,24 @@ function renderButtons() {
 
         $("#buttonBody").append(newBtn);
     }
-}
+};
 
-//Add Catagory button function
+//Creates a button to request 10 more GIFs
+// function renderPlusTenBtn() {
+//     var tenBtn = $("<button>");
+
+//     tenBtn.addClass("btn plus10");
+
+//     tenBtn.text("+10");
+
+//     $("#buttonBody").prepend(tenBtn);
+// };
+
+
+//Add Category button function
 $("#addCat").click(function (event) {
-    console.log("hello");
     event.preventDefault();
-    
+
     var newGif = $("#searchBar").val().trim();
     //If input field is blank, it will not create a button
     if (newGif === "") {
@@ -47,10 +60,23 @@ $("#addCat").click(function (event) {
     else {
         gifButtons.push(newGif);
     }
-    console.log("Input: " + newGif);
+    console.log("Added: " + newGif);
     renderButtons();
 
-})
+});
+
+// $(document).on("click", '.plus10', function () {
+//     limit += 10;
+//     console.log(limit);
+// })
+
+//Pressing "Enter" key will also add category button to div
+$("#searchBar").keyup(function(e) {
+    var code = e.which;
+    if(code === 13) {
+        $("#addCat").click();
+    }
+});
 
 //Displays gifs on page
 $(document).on("click", '.gifBtn', function () {
@@ -79,7 +105,7 @@ $(document).on("click", '.gifBtn', function () {
                 var title = $("<h6>").text(results[i].title);
                 title.addClass("gif-title");
 
-                var R = $("<p>").text("Rating: " + (results[i].rating).toUpperCase());
+                var R = $("<p>").text("Rating: " + results[i].rating);
                 R.addClass("gif-rating");
 
                 var gifImg = $("<img>");
@@ -104,7 +130,7 @@ $(document).on("click", '.gifBtn', function () {
 
             }
         })
-})
+});
 
 //Looks for class "gif" and toggles still/animate function
 $(document).on("click", '.gif', function () {
@@ -119,4 +145,4 @@ $(document).on("click", '.gif', function () {
         $(this).attr("src", $(this).attr("still"));
         $(this).attr("state", "still");
     }
-})
+});
