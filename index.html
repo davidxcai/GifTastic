@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GifTastic!</title>
+
+    <!--Reset CSS-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">GifTastic!</h1>
+            <p class="lead">Search for animated GIFs in the search bar!</p>
+            <hr class="my-4">
+            <input class="form-control form-control-lg" id="searchBar" type="text" placeholder="What should we look for?">
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-lg jumboBtn" id="searchBtn">Add Category</button>
+                </div>
+
+                <div class="col-auto-2">
+                    <select class="custom-select mr-sm-2" id="ratingSelect">
+                        <option selected>Rating</option>
+                        <option value="G">G</option>
+                        <option value="PG">PG</option>
+                        <option value="PG-13">PG-13</option>
+                        <option value="R">R</option>
+                    </select>
+                </div>
+
+                <div class="col-auto-2">
+                    <select class="custom-select mr-sm-2" id="limitSelect">
+                        <option selected>GIFs to Display</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <section>
+        <div class="card" id="buttonCard">
+            <div class="card-body">
+                <button class="btn btn-primary gifBtn" value="Pikachu">Pikachu</button>
+                <button class="btn btn-primary gifBtn" value="Bulbasaur">Bulbasaur</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="card" id="gifDisplay">
+            <div class="card-body" id="displayBody">
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/javascript/maincode.js"></script>
+</body>
+
+</html>
