@@ -1,12 +1,24 @@
+body {
+    background-color: #212129;
+}
+
 .jumbotron {
     text-align: center;
     margin-bottom: 0;
     padding-bottom: 1.2%;
     padding-top: 2%;
+    background-color: #4c5265;
+    color: #fdfcf3;
 }
 
 #searchBar {
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#addCat {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .jumboBtn {
@@ -14,11 +26,43 @@
     margin-top: 2%;
 }
 
+.parameters {
+    float: none;
+    margin: 0 auto;
+}
+
 #buttonCard {
     margin: 2%;
     border-radius: 25px;
+    background-color: #323949;
+}
+
+#buttonBody {
+    padding-bottom: 0;
 }
 
 #gifDisplay {
     margin: 2%;
+    display: none;
+    background-color: #323949;
+}
+
+.gifBtn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #6897bb;
+}
+
+.gif {
+    margin-right: 50px;
+}
+
+.gif-title {
+    text-transform: capitalize;
+    margin-right: 20%;
+    color: #fdfcf3;
+}
+
+.gif-rating {
+    color: #fdfcf3;
 }
